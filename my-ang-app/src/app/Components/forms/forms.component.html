@@ -1,0 +1,131 @@
+<div class="container">
+<div class="btn-group" mdbDropdown>
+    <a
+      mdbDropdownToggle
+      type="button"
+      mdbBtn
+      color="primary"
+      class="dropdown-toggle waves-light"
+      mdbWavesEffect
+    >
+      Basic dropdown
+    </a>
+
+    <div class="dropdown-menu dropdown-primary">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="divider dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+
+  <h1> Inputs </h1>
+  <div class="md-form">
+    <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
+    <input mdbInput type="text" id="form2" class="form-control">
+    <label for="form2">Example label</label>
+  </div>
+
+  <h1>Forms</h1>
+  <!-- Default form login -->
+<form class="text-center border border-light p-5">
+    <p class="h4 mb-4">Sign in</p>
+    <!-- Email -->
+    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+    <!-- Password -->
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+    <div class="d-flex justify-content-around">
+      <div>
+        <!-- Remember me -->
+        <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+      </div>
+      <div>
+        <!-- Forgot password -->
+        <a href="">Forgot password?</a>
+      </div>
+    </div>
+    <!-- Sign in button -->
+    <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+    <!-- Register -->
+    <p>Not a member?
+      <a href="">Register</a>
+    </p>
+    <!-- Social login -->
+    <p>or sign in with:</p>
+    <a type="button" class="light-blue-text mx-2">
+      <mdb-icon fab icon="facebook"></mdb-icon>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+      <mdb-icon fab icon="twitter"></mdb-icon>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+      <mdb-icon fab icon="linkedin"></mdb-icon>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+      <mdb-icon fab icon="github"></mdb-icon>
+    </a>
+  </form>
+  <!-- Default form login -->
+
+  <h3>CheckBox</h3>
+
+<section class="example-section">
+  <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+  <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox class="example-margin"
+                  [checked]="allComplete"
+                  [color]="task.color"
+                  [indeterminate]="someComplete()"
+                  (change)="setAll($event.checked)">
+      {{task.name}}
+    </mat-checkbox>
+  </span>
+  <span class="example-list-section">
+    <ul>
+      <li *ngFor="let subtask of task.subtasks">
+        <mat-checkbox [(ngModel)]="subtask.completed"
+                      [color]="subtask.color"
+                      (ngModelChange)="updateAllComplete()">
+          {{subtask.name}}
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+</div>
+
+<div class="container">
+    <h3>Radio Buttons</h3>
+    <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Option 1</mat-radio-button>
+        <mat-radio-button value="2">Option 2</mat-radio-button>
+      </mat-radio-group>
+</div>
+
+<h3>Slider Toggle</h3>
+<mat-slide-toggle>Slide me!</mat-slide-toggle>
+
+<h3>Progress bar</h3>
+<mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+
+<h3>Determinate Slider</h3>
+<mat-slider>
+    <input matSliderThumb>
+  </mat-slider>
+
+  <h3>Indeterminate Slider</h3>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+  <h3>Buffer Slider</h3>
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+
+  <h3>Query</h3>
+  <mat-progress-bar mode="query"></mat-progress-bar>
+
+  <h3>Progress Spinner</h3>
+  <mat-spinner></mat-spinner>
